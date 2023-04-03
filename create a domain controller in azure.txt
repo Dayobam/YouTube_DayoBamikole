@@ -1,0 +1,20 @@
+Create Resource Group
+az group create  --name ConceptRG --location eastus
+Create Virtual Network
+az network vnet create --name ConceptVNET --resource-group ConceptRG --subnet-name default --location eastus
+Create Virtual Machine
+
+az vm create 
+--resource-group ConceptRG 
+--name ConceptVM1 
+--image 2022-datacenter-azure-edition 
+--vnet-name ConceptVNET 
+--subnet default
+--admin-username azr
+
+DC
+az vm create --resource-group ConceptRG --name ConceptDC --image Win2022Datacenter --vnet-name ConceptVNET --subnet default --admin-username azr
+VM1
+az vm create --resource-group ConceptRG --name ConceptVM1 --image Win2022Datacenter --vnet-name ConceptVNET --subnet default --admin-username azr
+VM2
+az vm create --resource-group ConceptRG --name ConceptVM2 --image Win2022Datacenter --vnet-name ConceptVNET --subnet default --admin-username azr
